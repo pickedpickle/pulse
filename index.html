@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПУЛЬС — работает ли Рунет прямо сейчас</title>
+<meta name="description" content="Живой монитор состояния основных российских сервисов: Яндекс, ВК, Госуслуги, банки, маркетплейсы. Проверь, что работает, а что лежит.">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --bg-2: #ece7db;
+    --panel: #fbf9f4;
+    --text: #2b2b2b;
+    --muted: #8a8578;
+    --line: #e0dace;
+    --up: #3aa76d;
+    --slow: #d9a021;
+    --down: #d64545;
+    --accent: #c96a3f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 36px 20px 60px; }
+
+  header { text-align: center; margin-bottom: 26px; }
+  .logo { font-size: 36px; font-weight: 800; letter-spacing: 5px; color: var(--text); }
+  .logo .beat { color: var(--accent); }
+  .tagline { color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+  .verdict-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 26px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  }
+  .verdict { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+  .verdict.ok { color: var(--up); }
+  .verdict.warn { color: var(--slow); }
+  .verdict.bad { color: var(--down); }
+  .summary { display: flex; justify-content: center; gap: 26px; font-size: 14px; }
+  .summary span { color: var(--muted); }
+  .summary b { font-size: 18px; }
+  .s-up b { color: var(--up); }
+  .s-slow b { color: var(--slow); }
+  .s-down b { color: var(--down); }
+
+  .cat { margin: 24px 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 1px 4px rgba(0,0,0,.03);
+  }
+  .card .nm { font-weight: 600; font-size: 15px; }
+  .card .st { font-size: 12px; margin-top: 2px; }
+  .card.up   .st { color: var(--up); }
+  .card.slow .st { color: var(--slow); }
+  .card.down .st { color: var(--down); }
+
+  /* мини-пульс у каждого сервиса */
+  .mini { width: 60px; height: 30px; }
+  .mini path { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .mini.up   path { stroke: var(--up);   stroke-dasharray: 200; stroke-dashoffset: 200; animation: beat 1.8s linear infinite; }
+  .mini.slow path { stroke: var(--slow); stroke-dasharray: 200; stroke-dashoffset: 200; animation: beat 3s linear infinite; }
+  .mini.down path { stroke: var(--down); opacity: .55; }  /* лежит — линия замирает, без анимации */
+  @keyframes beat { to { stroke-dashoffset: 0; } }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 34px; }
+  .upd { margin-top: 6px; }
+  .err { text-align: center; color: var(--down); padding: 40px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">ПУ<span class="beat">Л</span>ЬС</div>
+      <div class="tagline">работает ли Рунет прямо сейчас</div>
+    </header>
+
+    <div class="verdict-box">
+      <div class="verdict" id="verdict">Проверяем…</div>
+      <div class="summary">
+        <span class="s-up">работает <b id="cUp">–</b></span>
+        <span class="s-slow">тормозит <b id="cSlow">–</b></span>
+        <span class="s-down">лежит <b id="cDown">–</b></span>
+      </div>
+    </div>
+
+    <div id="content"></div>
+
+    <footer>
+      <div>ПУЛЬС — независимый монитор. Обновляется автоматически.</div>
+      <div class="upd" id="updated"></div>
+    </footer>
+  </div>
+
+<script>
+const STATUS = { up: "работает", slow: "тормозит", down: "не работает" };
+
+// живая линия пульса (up/slow) или ровная замершая (down)
+const BEAT_PATH  = "M2 15 L14 15 L18 5 L22 25 L26 15 L38 15 L42 9 L46 21 L50 15 L58 15";
+const FLAT_PATH  = "M2 15 L58 15";
+
+function miniSvg(status) {
+  const d = status === "down" ? FLAT_PATH : BEAT_PATH;
+  return `<svg class="mini ${status}" viewBox="0 0 60 30" preserveAspectRatio="none"><path d="${d}"/></svg>`;
+}
+
+function render(data) {
+  const { summary, services, updated_at } = data;
+
+  const v = document.getElementById("verdict");
+  if (summary.down === 0 && summary.slow === 0) { v.textContent = "Всё работает"; v.className = "verdict ok"; }
+  else if (summary.down === 0) { v.textContent = "Работает с задержками"; v.className = "verdict warn"; }
+  else { v.textContent = `Проблемы: не работает ${summary.down}`; v.className = "verdict bad"; }
+
+  document.getElementById("cUp").textContent = summary.up;
+  document.getElementById("cSlow").textContent = summary.slow;
+  document.getElementById("cDown").textContent = summary.down;
+
+  const byCat = {};
+  for (const s of services) (byCat[s.category] ||= []).push(s);
+
+  let html = "";
+  for (const cat of Object.keys(byCat)) {
+    html += `<div class="cat">${cat}</div><div class="grid">`;
+    for (const s of byCat[cat]) {
+      html += `<div class="card ${s.status}">
+        <div><div class="nm">${s.name}</div><div class="st">${STATUS[s.status]}</div></div>
+        ${miniSvg(s.status)}
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  document.getElementById("content").innerHTML = html;
+
+  const dt = new Date(updated_at);
+  document.getElementById("updated").textContent = "обновлено: " + dt.toLocaleString("ru-RU");
+}
+
+async function load() {
+  try {
+    const res = await fetch("status.json?_=" + Date.now());
+    if (!res.ok) throw new Error("нет данных");
+    render(await res.json());
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      `<div class="err">Не удалось загрузить статус. Обновите страницу.</div>`;
+  }
+}
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>

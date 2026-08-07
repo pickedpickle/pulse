@@ -1,0 +1,23 @@
+[
+  { "id": "yandex",      "name": "Яндекс Поиск",   "url": "https://ya.ru",              "category": "Яндекс" },
+  { "id": "yandexmarket","name": "Яндекс Маркет",  "url": "https://market.yandex.ru",  "category": "Яндекс" },
+  { "id": "kinopoisk",   "name": "Кинопоиск",      "url": "https://www.kinopoisk.ru",  "category": "Яндекс" },
+  { "id": "dzen",        "name": "Дзен",           "url": "https://dzen.ru",           "category": "Яндекс" },
+
+  { "id": "vk",          "name": "ВКонтакте",      "url": "https://vk.com",            "category": "VK" },
+  { "id": "mailru",      "name": "Mail.ru",        "url": "https://mail.ru",           "category": "VK" },
+
+  { "id": "telegram",    "name": "Telegram",       "url": "https://web.telegram.org",  "category": "Мессенджеры" },
+
+  { "id": "gosuslugi",   "name": "Госуслуги",      "url": "https://www.gosuslugi.ru",  "category": "Госсервисы" },
+
+  { "id": "sber",        "name": "Сбербанк",       "url": "https://www.sberbank.ru",   "category": "Банки" },
+  { "id": "tinkoff",     "name": "Т-Банк",         "url": "https://www.tbank.ru",      "category": "Банки" },
+  { "id": "vtb",         "name": "ВТБ",            "url": "https://www.vtb.ru",        "category": "Банки" },
+
+  { "id": "wildberries", "name": "Wildberries",    "url": "https://www.wildberries.ru","category": "Маркетплейсы" },
+  { "id": "ozon",        "name": "Ozon",           "url": "https://www.ozon.ru",       "category": "Маркетплейсы" },
+
+  { "id": "avito",       "name": "Авито",          "url": "https://www.avito.ru",      "category": "Сервисы" },
+  { "id": "rutube",      "name": "RUTUBE",         "url": "https://rutube.ru",         "category": "Сервисы" }
+]

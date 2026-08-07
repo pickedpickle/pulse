@@ -1,0 +1,38 @@
+name: ping
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # каждые 5 минут (минимум, что даёт GitHub cron)
+  workflow_dispatch:         # + ручной запуск из вкладки Actions
+
+permissions:
+  contents: write            # джобе нужно право коммитить status.json обратно
+
+concurrency:
+  group: ping                # не запускать два прогона внахлёст
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Прогон пингера
+        run: python check.py
+
+      - name: Коммит status.json, если изменился
+        run: |
+          git config user.name  "pulse-bot"
+          git config user.email "pulse-bot@users.noreply.github.com"
+          if git diff --quiet -- status.json; then
+            echo "status.json без изменений — коммит не нужен"
+          else
+            git add status.json
+            git commit -m "chore: обновление статуса [skip ci]"
+            git push
+          fi
