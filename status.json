@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-08-19T14:19:47+00:00",
+  "updated_at": "2026-08-19T14:56:55+00:00",
   "summary": {
     "total": 15,
-    "up": 11,
-    "slow": 3,
+    "up": 10,
+    "slow": 4,
     "down": 1
   },
   "services": [
@@ -13,7 +13,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 3465,
+      "response_ms": 2747,
       "error": null
     },
     {
@@ -22,7 +22,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1120,
+      "response_ms": 1274,
       "error": null
     },
     {
@@ -31,7 +31,7 @@
       "category": "Банки",
       "status": "down",
       "http_code": null,
-      "response_ms": 15551,
+      "response_ms": 18174,
       "error": "<urlopen error timed out>"
     },
     {
@@ -40,7 +40,7 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2038,
+      "response_ms": 1298,
       "error": null
     },
     {
@@ -49,16 +49,16 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1114,
+      "response_ms": 1223,
       "error": null
     },
     {
       "id": "gosuslugi",
       "name": "Госуслуги",
       "category": "Госсервисы",
-      "status": "up",
+      "status": "slow",
       "http_code": 200,
-      "response_ms": 1333,
+      "response_ms": 16652,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 307,
-      "response_ms": 22253,
+      "response_ms": 23063,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 498,
-      "response_ms": 1262,
+      "response_ms": 1280,
       "error": null
     },
     {
@@ -85,7 +85,7 @@
       "category": "Мессенджеры",
       "status": "up",
       "http_code": 200,
-      "response_ms": 448,
+      "response_ms": 526,
       "error": null
     },
     {
@@ -94,7 +94,7 @@
       "category": "Сервисы",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1677,
+      "response_ms": 1179,
       "error": null
     },
     {
@@ -103,7 +103,7 @@
       "category": "Сервисы",
       "status": "slow",
       "http_code": 429,
-      "response_ms": 749,
+      "response_ms": 277,
       "error": null
     },
     {
@@ -112,7 +112,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2422,
+      "response_ms": 1813,
       "error": null
     },
     {
@@ -121,7 +121,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2420,
+      "response_ms": 1802,
       "error": null
     },
     {
@@ -130,7 +130,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1276,
+      "response_ms": 1300,
       "error": null
     },
     {
@@ -139,7 +139,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1720,
+      "response_ms": 1510,
       "error": null
     }
   ]
