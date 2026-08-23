@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-23T18:38:07+00:00",
+  "updated_at": "2026-08-23T19:01:44+00:00",
   "summary": {
     "total": 15,
     "up": 11,
-    "slow": 4,
-    "down": 0
+    "slow": 3,
+    "down": 1
   },
   "services": [
     {
@@ -13,7 +13,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2106,
+      "response_ms": 2740,
       "error": null
     },
     {
@@ -22,16 +22,16 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1160,
+      "response_ms": 1194,
       "error": null
     },
     {
       "id": "vtb",
       "name": "ВТБ",
       "category": "Банки",
-      "status": "slow",
+      "status": "down",
       "http_code": null,
-      "response_ms": 19457,
+      "response_ms": 18801,
       "error": "<urlopen error timed out>"
     },
     {
@@ -40,7 +40,7 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1029,
+      "response_ms": 2501,
       "error": null
     },
     {
@@ -49,16 +49,16 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1568,
+      "response_ms": 1109,
       "error": null
     },
     {
       "id": "gosuslugi",
       "name": "Госуслуги",
       "category": "Госсервисы",
-      "status": "up",
+      "status": "slow",
       "http_code": 200,
-      "response_ms": 1301,
+      "response_ms": 17020,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 307,
-      "response_ms": 20835,
+      "response_ms": 23419,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 498,
-      "response_ms": 710,
+      "response_ms": 989,
       "error": null
     },
     {
@@ -85,7 +85,7 @@
       "category": "Мессенджеры",
       "status": "up",
       "http_code": 200,
-      "response_ms": 377,
+      "response_ms": 562,
       "error": null
     },
     {
@@ -94,16 +94,16 @@
       "category": "Сервисы",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1685,
+      "response_ms": 1403,
       "error": null
     },
     {
       "id": "avito",
       "name": "Авито",
       "category": "Сервисы",
-      "status": "slow",
-      "http_code": 429,
-      "response_ms": 968,
+      "status": "up",
+      "http_code": 200,
+      "response_ms": 984,
       "error": null
     },
     {
@@ -112,7 +112,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1510,
+      "response_ms": 1795,
       "error": null
     },
     {
@@ -121,7 +121,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1669,
+      "response_ms": 1800,
       "error": null
     },
     {
@@ -130,7 +130,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 932,
+      "response_ms": 1075,
       "error": null
     },
     {
@@ -139,7 +139,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1457,
+      "response_ms": 1700,
       "error": null
     }
   ]
