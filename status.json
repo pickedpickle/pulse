@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-23T10:24:52+00:00",
+  "updated_at": "2026-08-23T10:46:10+00:00",
   "summary": {
     "total": 15,
-    "up": 10,
-    "slow": 4,
-    "down": 1
+    "up": 12,
+    "slow": 3,
+    "down": 0
   },
   "services": [
     {
@@ -13,7 +13,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2444,
+      "response_ms": 1891,
       "error": null
     },
     {
@@ -22,7 +22,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1198,
+      "response_ms": 1079,
       "error": null
     },
     {
@@ -31,8 +31,8 @@
       "category": "Банки",
       "status": "slow",
       "http_code": null,
-      "response_ms": 13723,
-      "error": "<urlopen error [Errno 104] Connection reset by peer>"
+      "response_ms": 17368,
+      "error": "<urlopen error timed out>"
     },
     {
       "id": "sber",
@@ -40,7 +40,7 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2021,
+      "response_ms": 1175,
       "error": null
     },
     {
@@ -49,17 +49,17 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1201,
+      "response_ms": 1231,
       "error": null
     },
     {
       "id": "gosuslugi",
       "name": "Госуслуги",
       "category": "Госсервисы",
-      "status": "down",
-      "http_code": null,
-      "response_ms": 31205,
-      "error": "<urlopen error timed out>"
+      "status": "up",
+      "http_code": 200,
+      "response_ms": 1037,
+      "error": null
     },
     {
       "id": "ozon",
@@ -67,7 +67,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 307,
-      "response_ms": 23957,
+      "response_ms": 18074,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 498,
-      "response_ms": 978,
+      "response_ms": 607,
       "error": null
     },
     {
@@ -85,7 +85,7 @@
       "category": "Мессенджеры",
       "status": "up",
       "http_code": 200,
-      "response_ms": 569,
+      "response_ms": 352,
       "error": null
     },
     {
@@ -94,16 +94,16 @@
       "category": "Сервисы",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1781,
+      "response_ms": 1480,
       "error": null
     },
     {
       "id": "avito",
       "name": "Авито",
       "category": "Сервисы",
-      "status": "slow",
-      "http_code": 429,
-      "response_ms": 935,
+      "status": "up",
+      "http_code": 200,
+      "response_ms": 452,
       "error": null
     },
     {
@@ -112,7 +112,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1635,
+      "response_ms": 1432,
       "error": null
     },
     {
@@ -121,7 +121,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1978,
+      "response_ms": 1418,
       "error": null
     },
     {
@@ -130,7 +130,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1286,
+      "response_ms": 815,
       "error": null
     },
     {
@@ -139,7 +139,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1737,
+      "response_ms": 1273,
       "error": null
     }
   ]
