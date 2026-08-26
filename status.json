@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-26T09:54:27+00:00",
+  "updated_at": "2026-08-26T10:22:20+00:00",
   "summary": {
     "total": 15,
-    "up": 9,
-    "slow": 6,
-    "down": 0
+    "up": 11,
+    "slow": 3,
+    "down": 1
   },
   "services": [
     {
@@ -13,7 +13,7 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 2594,
+      "response_ms": 2849,
       "error": null
     },
     {
@@ -22,16 +22,16 @@
       "category": "VK",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1184,
+      "response_ms": 1050,
       "error": null
     },
     {
       "id": "vtb",
       "name": "ВТБ",
       "category": "Банки",
-      "status": "slow",
+      "status": "down",
       "http_code": null,
-      "response_ms": 16825,
+      "response_ms": 16530,
       "error": "<urlopen error timed out>"
     },
     {
@@ -40,7 +40,7 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1349,
+      "response_ms": 1945,
       "error": null
     },
     {
@@ -49,7 +49,7 @@
       "category": "Банки",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1166,
+      "response_ms": 1206,
       "error": null
     },
     {
@@ -58,7 +58,7 @@
       "category": "Госсервисы",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1389,
+      "response_ms": 1793,
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 307,
-      "response_ms": 24642,
+      "response_ms": 27167,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
       "category": "Маркетплейсы",
       "status": "slow",
       "http_code": 498,
-      "response_ms": 1300,
+      "response_ms": 827,
       "error": null
     },
     {
@@ -85,7 +85,7 @@
       "category": "Мессенджеры",
       "status": "up",
       "http_code": 200,
-      "response_ms": 514,
+      "response_ms": 412,
       "error": null
     },
     {
@@ -94,7 +94,7 @@
       "category": "Сервисы",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1403,
+      "response_ms": 1859,
       "error": null
     },
     {
@@ -103,25 +103,25 @@
       "category": "Сервисы",
       "status": "slow",
       "http_code": 429,
-      "response_ms": 680,
+      "response_ms": 849,
       "error": null
     },
     {
       "id": "dzen",
       "name": "Дзен",
       "category": "Яндекс",
-      "status": "slow",
+      "status": "up",
       "http_code": 200,
-      "response_ms": 6776,
+      "response_ms": 1511,
       "error": null
     },
     {
       "id": "kinopoisk",
       "name": "Кинопоиск",
       "category": "Яндекс",
-      "status": "slow",
+      "status": "up",
       "http_code": 200,
-      "response_ms": 6732,
+      "response_ms": 1631,
       "error": null
     },
     {
@@ -130,7 +130,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1288,
+      "response_ms": 1049,
       "error": null
     },
     {
@@ -139,7 +139,7 @@
       "category": "Яндекс",
       "status": "up",
       "http_code": 200,
-      "response_ms": 1659,
+      "response_ms": 1368,
       "error": null
     }
   ]
